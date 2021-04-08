@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>оповещение</title>
+    <link rel="stylesheet" href="{% static 'succes_sender.css'  %}">
+</head>
+<body>
+    <div class="my-cabinet"><a href="{% url 'users:account' pk=user.pk %}">Вернуться в личный кабинет</a></div>
+    <div class="alert">Вы успешно оставили заявку на получение оповещений по {{ sender }} инструкции были направлены на почту<span> {{ user.email }}</span></div>
+    
+</body>
+</html>

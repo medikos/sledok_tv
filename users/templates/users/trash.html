@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Корзина</title>
+        <link rel="stylesheet" href="{% static 'reset.css' %}">
+        <link rel="stylesheet" href="{% static 'trash.css'  %}">
+    </head>
+    <body>
+        <header>
+                <div class="header">
+                    <p class="my-trash">Моя корзина</p>
+                    <p class="clear-trash"><a href="{% url 'users:trash_clear' pk=user.pk %}">Очистить корзину</a></p>
+                </div>
+
+        </header>
+
+        <div class="block">
+            <div class="all-shows">
+                {% for show in shows %}
+                    <div class="show">
+
+                        <img src="{{ show.original_image.url }}">
+                        <div class="description">{{ show.name }}</div>
+                    </div>
+                {% endfor %}
+
+
+
+
+            </div>
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,88 @@
+
+body{
+    background-image: url('img/black-gridius.png');
+    /* text-align: center; */
+}
+header{
+    text-align: center;
+    margin-top: 2em;
+    font-family: 'Bebas Neue', cursive;
+    
+}
+.logo .first{
+    color: yellow;
+}
+.logo .second {
+    color: red;
+}
+header a{
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 2rem;
+}
+.center{
+    margin-top: 5em;
+    border: 1px solid whitesmoke;
+    width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: yellow;
+    border-radius: 1em;
+    padding:1em;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.center h2{
+    font-size: 1.5em;
+    
+}
+
+#login-form p{
+    margin-top: 1.3em;
+    display: flex;
+    flex-flow: column nowrap;
+
+}
+#login-form label{
+    margin-bottom: .3em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+
+}
+#login-form .label::before{
+    content: ' *';
+    color: red;
+}
+#login-form p input{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 2.3em;
+    border-radius: 1em;
+    padding-left: .5em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    outline: none;
+}
+
+#login-form .button{
+    width: 50%;
+    margin-top: .7em;
+    height: 1.7em;
+    outline: none;
+    border-radius: .7em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    background-color: red;
+    color: whitesmoke;
+    
+
+}
+
+
+
+
+
+

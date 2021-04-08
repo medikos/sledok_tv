@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'main.css' %}">
+
+
+{% endblock link %}
+
+{% block title %}Главная {% endblock title %}
+
+{% block content %}
+<div class="main">
+    <div class="board-right">  
+      {% if base and not user.is_authenticated %}
+      <div class="hello">Следи за выходом своих любимых сериалов и аниме, 
+        при регистрации и вашем желании отправляем уведомления о выходе новых серий 
+        в телеграм или по почте
+      </div>
+      
+      {% endif %} 
+      <h1 class="left">Самое Популярное</h1>
+      
+      <div class="tv-shows">
+        {% for show in page.object_list %}
+        <div class="show">
+          <a href="#">
+            <img src="{{ show.original_image.url }}" class="original-image" alt="">
+          </a>
+          <div class="show-description">
+            <a href="{{ show.get_absolute_url }}">{{ show.rus_fields.name | truncatewords:3 }}</a>
+          </div>
+          <!-- <div class="like-raiting"> 
+            <a href="#" id="Subscribe"><i class="fa fa-heart" aria-hidden="true"></i></a>
+          </div> -->
+          <a href="#"><div class="show-raiting" id='show-raiting'>
+            <i class="fa fa-star" aria-hidden="true"></i>
+          {{ show.raiting_average|default_if_none:"" }}
+          </div></a>
+
+        </div>
+
+        {% endfor %}
+
+        
+      </div>
+    <div class="paginator">
+
+        {% if page.has_previous %}
+
+            <a href="?page={{ page.previous_page_number }}">Назад</a>
+        {% endif %}
+
+        {% if page.has_next %}
+            <a class="next" href="?page={{ page.next_page_number }}">Следующяя</a>
+            <a class="next" href="?page={{ page.paginator.num_pages }}">Последняя</a>
+        {% endif %}
+
+
+    </div>
+    </div>
+    <div class="board-left">
+      <h1 class="right">Расписание на сегодня</h1>
+      <div class="mini-shedule"> 
+        {% for episode in episodes %}
+        
+        <div class="episode">
+          <p class="name-show">{{ episode.show.name | truncatewords:3}}</p>
+          <p>{{ episode.airdate }}</p>
+          <p>{{ episode.name | truncatewords:3 }}</p>
+          
+        </div>
+        {% endfor %}
+        
+        
+
+      </div>
+
+      
+    </div>
+    
+
+
+  </div>
+
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+body{
+    background-image: url('./img/black-gridius.png');
+    
+}
+.my-cabinet{
+    margin-top: 2em;
+    font-size: 1.4em;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.my-cabinet a{
+    text-decoration: underline rgba(0, 128, 0, 0.74) ;
+    color: whitesmoke;
+}
+
+
+.alert{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+    margin-top: 200px;
+    font-size: 2em;
+    color: rgba(245, 245, 245, 0.671);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: .2em;
+}
+.alert span{
+    text-decoration: underline rgba(255, 255, 0, 0.651);
+}

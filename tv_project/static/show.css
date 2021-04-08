@@ -1,0 +1,195 @@
+:root{
+    font-family: 'Bebas Neue', cursive;
+}
+.show{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4em;
+}
+.show .show-name{
+    text-align: center;
+    font-size: 2em;
+    color: rgb(197, 21, 21);
+    letter-spacing: .3em;
+    text-decoration: underline rgba(245, 245, 245, 0.473);
+    padding-bottom: 2em;
+}
+.show-channel{
+    text-align: center;
+    font-size: 2em;
+    color: whitesmoke;
+}
+.show-image-and-description{
+    display: flex;
+    flex-flow: row wrap;
+}
+ img{
+     width: 100%;
+     height: 400px;
+ }
+ .img{
+     flex-basis: 300px;
+     margin-right: 2em;
+     padding: 1em;
+
+ }
+ .description{
+     flex: 11 0 400px;
+     color: whitesmoke;
+     letter-spacing: .1em;
+     font-family: 'Varela Round', sans-serif;
+     line-height: 1.5em;
+     /* align-self: center; */
+     position: relative;
+     font-size: 1em;
+     word-spacing: .1;
+     
+     
+ }
+ 
+ .description i{
+     position: absolute;
+     bottom: 0;
+     right: 0;
+     color: red;
+
+ }
+ .description .like-raiting{
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     
+ }
+ .like-raiting i:hover{
+     transform: scale(1.2);
+
+ }
+ #Subscribe{
+     text-decoration: none;
+ }
+ #add {
+     position:absolute;
+     right: -6em;
+     top: -8em;
+     font-size: .7em;
+     line-height: 1em;
+     background-color: whitesmoke;
+     color: black;
+     border-radius: 5px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: bold;
+     padding: 2px;
+     
+ }
+ #notAuth{
+    position:absolute;
+    right: -6em;
+    top: -15em;
+    font-size: .7em;
+    line-height: 1em;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 5px;
+
+ }
+ #yesAuth{
+    position:absolute;
+    right: -6em;
+    top: -15em;
+    font-size: .7em;
+    line-height: 1em;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 5px
+
+ }
+ .show-episodes{
+     display: flex;
+     flex-flow: column nowrap;
+     padding-top: 3em;
+     margin-bottom: 5em;
+ }
+ .show-episodes .episode{
+     width: 100%;
+     display: flex;
+     flex-flow: row nowrap;
+     border: solid 1px whitesmoke;
+     padding: 1em .2em 1em .7em;
+     font-family:'Varela Round', sans-serif ;
+     color: whitesmoke;
+     font-size: 1.3em;
+     background-color: rgba(133, 51, 51, 0.71);
+     
+ }
+ .show-episodes .head-episodes{
+     display: flex;
+     flex-flow: row nowrap;
+     
+ }
+ .head-episodes div{
+     border: solid 1px whitesmoke;
+     padding: 1em;
+     font-size: 1.3em;
+     color: whitesmoke;
+ }
+
+ .head-episodes .s{
+     flex: 1;
+     background-color: brown;
+     
+    
+ }
+
+ .head-episodes .n{
+     flex: 1;
+     background-color: rgba(165, 42, 42, 0.658);
+ }
+ .head-episodes .na{
+     flex: 5;
+     background-color: brown;
+ }
+ .head-episodes .d{
+     flex: 3;
+     background-color: rgba(165, 42, 42, 0.527);
+
+ }
+ 
+ .episode .season{
+     flex: 1;
+     
+ }
+ .episode .number{
+     flex: 1;
+     padding-left: 1em;
+     text-align: center;
+ }
+ .episode .name{
+     flex: 5;
+     padding-left: 1.5em;
+     text-align: center;
+ }
+ .episode .data{
+     flex: 3;
+     padding-left: 1em;
+     text-align: center;
+ }
+ .show-status{
+     font-size: 1.3em;
+
+     word-spacing: .2em;
+     letter-spacing: .1em;
+     float: right;
+     background-color: #b5b1b1;
+     padding: .4em;
+     border-radius: .4em;
+
+     color: #d91010;
+
+ }

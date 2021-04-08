@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'reset.css' %}">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'index' %}" class="logo-href"><div class="logo">СЛЕДОК <span class="first">T</span><span class="second">V</span> </div></a>
+    </header>
+    <div class="center">
+    <h2>Вход</h2>
+    <form method="POST" id="login-form">
+
+        {% csrf_token %}
+        <!-- form variable -->    
+         {{ form.as_p }} 
+        
+          <input type="submit" value="отправить" class="button" >
+    </form>
+    
+
+    </div>
+    <div class="or">
+        <h1>Или</h1>
+        <a href="{% url 'registration' %}"><p>Регистрация</p></a>
+
+    </div>
+    
+    
+</body>
+</html>

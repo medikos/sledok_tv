@@ -1,0 +1,239 @@
+body{
+    background-image: url('./img/black-gridius.png');
+}
+.header{
+    border-bottom: 1px solid whitesmoke;
+    padding: 2em 3em;
+    background-color: darkslategray;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    
+}
+
+@keyframes trash_hover {
+    from{
+        color: #f5f5f58a;
+
+    }
+    to{
+        color: whitesmoke;
+    }
+
+}
+#trash:hover{
+    animation-name: trash_hover;
+    animation-duration: 1s;
+}
+.add_clear{
+    position: absolute;
+    z-index: 1000;
+    right: 1em;
+    color: red;
+
+
+}
+#description{
+    float: right;
+    padding: .3em;
+    background-color: whitesmoke;
+    color: black;
+    margin-right: 4em;
+    margin-top: 10px;
+    border-radius: .4em;
+}
+:root {
+    font-family: 'Bebas Neue', cursive;
+}
+
+
+.float-right a{
+    color: whitesmoke;
+    margin-right: 1em;
+    font-size: 1.5em;
+    text-decoration: none;
+
+}
+.float-right i{
+    color: #f5f5f58a;
+    cursor: pointer;
+
+}
+.main{
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+}
+.username{
+    text-align: left;
+    font-size: 1.8em;
+    color: whitesmoke;
+    margin-top: 1em;
+    letter-spacing: .5em;
+    
+}
+.username h3{
+    width: 6em;
+    text-decoration: underline brown;
+    
+}
+
+.my-text{
+    text-align: center;
+    margin-top: 1em;
+    font-size: 1.8em;
+    color: rgba(245, 245, 245, 0.884);
+}
+.alerts{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 1.9em;
+    font-family: 'Bebas Neue', cursive;
+
+}
+form label{
+    font-size: .7em;
+    
+}
+form{
+    border: whitesmoke 1px solid;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    background-color:rgba(255, 0, 96, 0.12);
+    color: whitesmoke;
+    text-align: left;
+
+}
+form .chois{
+    font-size: .7em;
+    padding: 1em;
+}
+.label-time{
+    font-size: .5em;
+}
+form .time{
+    margin-left: 2em;
+    margin-bottom: 1em;
+    
+}
+form .send{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    width: 10em;
+    border-radius: 3px;
+    font-family:'Bebas Neue', cursive ;
+    background-color: springgreen;
+    cursor: pointer;
+
+}
+
+.my_shows{
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 2em;
+}
+
+.my_shows .show{
+    padding: 2em;
+    position: relative;
+
+    
+}
+.my_shows #img{
+    width: 170px;
+    height: 250px;
+    
+}
+@keyframes image_scale{
+    from {
+        transform:  translate(0px, 0px);
+
+
+        
+
+    }
+    50%{
+        
+        transform: translate(0px,-10px);
+        
+        
+    }
+    to{
+        transform:  translate(0px, 0px);
+    }
+}
+.my_shows #img:hover{
+    animation-name: image_scale;
+    animation-duration: 0.7s;
+    
+}
+.description{
+    width: 170px;
+    height: 80px;
+    background-color:  #552222;
+    color: whitesmoke;
+    padding: .3em;
+    text-align: center;
+    margin-top: -2px;
+    border-bottom-left-radius: .4em;
+    border-bottom-right-radius: .4em;
+    position: relative;
+}
+.description a{
+    text-decoration: none;
+    color: whitesmoke;
+}   
+.description .clear{
+    
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    cursor: pointer;
+    color: #d9dbdd;
+    
+    
+}
+.description .eyes{
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    color: #d9dbdd;
+    cursor: pointer;
+
+}
+.logo-href{
+   text-decoration: none;
+   font-size: 2em;
+   color: whitesmoke;
+
+   
+}
+.logo-href .first{
+    color: red;
+}
+
+.logo-href .second{
+    color: yellow;
+}
+
+
+.info-eyes{
+    background-color: whitesmoke;
+    color: black;
+    font-size: .8em;
+    width: 100%;
+    border-radius: .2em;
+    position: absolute;
+    bottom: -12px;
+    right: 0;
+    font-weight: bold;
+
+
+}
+.warnings{
+    display: none;
+
+}

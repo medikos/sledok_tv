@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load  filter_status %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'show.css' %}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"> 
+
+
+
+{% endblock link %}
+
+
+{% block content %}
+
+<div class="show">
+    {% if show.rus_fields.name %}
+    <h1 class="show-name">{{show.rus_fields.name}}</h1>
+    <h3 class="show-status">Статус : {{ show.status|status }}</h3>
+    <h3 class="show-channel">{{ show.web_channel|default_if_none:"" }}</h3>
+    {% else %}
+    <h1 class="show-name">{{ show.name }} </h1>
+    <h3 class="show-channel">{{ show.web_channel|default_if_none:"" }}</h3>
+        
+    {% endif %}
+    <div class="show-image-and-description">
+        <div class="img">
+            <img src="{{ show.original_image.url }}" alt="">
+            
+        </div>
+        <div class="description">
+            {% if show.rus_fields.description %}
+            <p>{{ show.rus_fields.description }} hello</p>
+            
+            {% else %}
+            <p> {{ show.summary|striptags}}</p>
+            {%endif%}
+            {% if show.raiting %}
+            <i class="fa fa-star start-right" aria-hidden="true">{{ show.raiting_average }}</i>
+            {% else %}
+            <i class="fa fa-star star-right" aria-hidden="true"></i>
+            {% endif %}  
+            <div class="like-raiting"> 
+                <a href="#" id="Subscribe"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></a>
+                <div id='add'>Добавить в коллекцию</div>
+                <div id='notAuth'>Вам нужно войти в личный кабинет для добавления шоу в коллекцию</div>
+                <div id='yesAuth'>Добавлено шоу  коллекцию</div>
+
+            </div>  
+        </div>
+
+    </div>
+    <div class="show-episodes">
+        <div class="head-episodes ">
+            <div class="s">Сезон</div>
+            <div class="n">Серия</div>
+            <div class="na">Название</div>
+            <div class="d">Дата выхода</div>
+        </div>
+        {% for episode in show.Episodes.all %}
+        <div class="episode">
+            <p class="season">{{ episode.season }}</p>
+            <p class="number">{{ episode.number }}</p>
+            <p class="name">{{episode.name}}</p>
+            {% if episode.airdate %}
+            <p class="data">{{ episode.airdate }}</p>
+            {% else %}
+            <p class="data">Неизветно</p>
+
+            {% endif %}
+        </div>
+        {% endfor %}
+        
+        
+
+    </div>
+    
+
+</div>
+
+{% endblock content %}

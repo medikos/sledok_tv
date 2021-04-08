@@ -1,0 +1,70 @@
+
+
+body{
+    background-image: url('img/black-gridius.png');
+    /* text-align: center; */
+}
+header{
+    text-align: center;
+    margin-top: 2em;
+    font-family: 'Bebas Neue', cursive;
+
+}
+.logo .first{
+    color: yellow;
+}
+.logo .second {
+    color: red;
+}
+ h2{
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 3em;
+    font-family: 'Bebas Neue', cursive;
+    color: whitesmoke;
+    
+    
+}
+header a{
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 2rem;
+
+}
+.registration{
+    margin-top: 5em;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    /* border: 1px solid whitesmoke; */
+}
+.registration label{
+    display: none;
+}
+.registration input{
+    height: 2.3em;
+    width: 15rem;
+    margin: .5rem;
+    outline: none;
+    border-radius: 1em;
+    padding-left: 1em;
+}
+
+.registration button{
+    margin-top: 1em;
+    width: 10rem;
+    background-color: red;
+    border-radius: .5em;
+    color:whitesmoke;
+    cursor: pointer;
+    padding: 0;
+    height: 2em;
+    font-size: 1.2em;
+}
+.errorlist {
+    color: red;
+    font-family:'Bebas Neue', cursive ;
+}
+
+

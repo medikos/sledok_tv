@@ -1,0 +1,69 @@
+body{
+    background-image: url("img/black-gridius.png");
+}
+
+header .header{
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 1.3em;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 2em;
+}
+.header .my-trash{
+    flex: 1;
+    color: whitesmoke;
+    letter-spacing: 1em;
+    text-decoration: yellow underline;
+    font-size: 1.2em;
+    padding: 1em;
+    line-height: 1.3em;
+
+
+
+}
+.header .clear-trash{
+    flex: 3;
+    text-align: center;
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 1em;
+
+}
+.clear-trash a{
+    text-decoration: none;
+    background-color: #b86f26;
+    width: 7em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .4em;
+    border-radius: 1em;
+    color: darkred;
+
+}
+.all-shows{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-top: 3em;
+
+
+}
+.all-shows .show{
+    width: 200px;
+
+
+}
+.all-shows .show img{
+    width: 200px;
+    height: 250px;
+}
+
+.all-shows .show .description{
+    background-color: #552222;
+    text-align: center;
+    margin-top: -5px;
+    height: 4em;
+    padding: .3em;
+    font-family: 'Bebas Neue', cursive;
+    color: whitesmoke;
+}

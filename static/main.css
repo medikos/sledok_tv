@@ -1,0 +1,210 @@
+
+
+.tv-shows{
+    display: flex;
+    flex-flow: row wrap;
+    
+}
+.show {
+
+    flex-grow: 1;
+    flex-basis: 170px;
+    margin-top: 3em;
+    position: relative;
+}
+.hello{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 90%;
+    font-size: 1.6em;
+    color: whitesmoke;
+    border: solid 1px wheat;
+    border-radius: .6em;
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: #21082338;
+    letter-spacing: .2em;
+}
+
+
+.show .show-raiting{
+    position: absolute;
+    top:0;
+    background-color: rgba(0, 0, 0, 0.425);
+    width: 170px;
+    height: 13rem;
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 4em;
+    font-size: 1.5em;
+    opacity: 0;
+
+    
+}
+
+.show-raiting p{
+    margin-top: .5em;
+    color: green;
+}
+.show-raiting i {
+    color: red;
+}
+
+.show .original-image{
+    width: 170px;
+    height: 13rem;
+    padding: 1px;
+    
+   
+}
+ .show-description{
+    width: 170px;
+    height: 4rem;
+    background-color: #552222;
+    text-align: center;
+    padding-top: .5em;
+    padding-left: .2em;
+    padding-right: .2em;
+    margin-top: -5px;
+    font-size: 1em;  
+    color: whitesmoke;
+    
+    border-bottom-left-radius: .9em;
+    border-bottom-right-radius: .9em;
+    box-shadow: 1px 3px 3px #ded8df38;
+
+    
+    
+}
+.show-description a{
+    color: whitesmoke;
+    text-decoration: none;
+    width: 100%;
+}
+
+.show-description a:link{
+    color: whitesmoke;
+}
+
+.show-description a:visited{
+    color: whitesmoke;
+}
+
+.show-description a:active{
+    color: whitesmoke;
+}
+.like-raiting{
+    /* border-top: 1px solid black; */
+    height: 1.5rem;
+    background-color:   #1f1e1e;
+    width: 170px;
+}
+
+.like-raiting a {
+    float: right;
+    padding-right:.5em ;
+    color: rgba(245, 245, 245, 0.774);
+    text-decoration: none;
+}
+.like-raiting i{
+    color: red;
+    
+}
+.like-raiting :hover{
+    scale: 1.2;
+
+}
+.like-raiting a:hover{
+    color: white;
+}
+.like-raiting a:link{
+    color: rgba(245, 245, 245, 0.774);
+}
+.like-raiting a:visited{
+    color: rgba(245, 245, 245, 0.774);
+}
+.like-raiting a:active{
+    color: rgba(245, 245, 245, 0.774);
+}
+
+/* animations */
+
+@keyframes raiting{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.right{
+    margin-bottom: 1.4em;
+    text-decoration: underline  rgba(161, 134, 161, 0.726);
+    margin-left: .7em;
+}
+.mini-shedule{
+    display: flex;
+    flex-flow: column nowrap;
+
+}
+.mini-shedule .episode{
+    flex:1;
+    background-color:  black;
+    margin-bottom: .5em;
+    border: solid 1px whitesmoke ;
+    border-radius: .3em;
+}
+.mini-shedule .episode .name-show{
+    text-align: center;
+    font-size: 1.3em;
+    background-color: whitesmoke;
+    letter-spacing: .2em;
+    padding: .2em;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.mini-shedule .episode .studi{
+    padding-top: .4em;
+}
+.mini-shedule .episode p{
+    background-color: rgba(161, 134, 161, 0.308);
+    text-align: center;
+    font-size: 1.1em;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: .6em;
+    letter-spacing: .2em;
+   
+}
+.paginator{
+
+    margin-top: 7em;
+    color: black;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 10em;
+
+
+}
+.paginator a{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black ;
+    border-radius: 10px;
+    background-color: yellow;
+    padding: .5em .8em;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.2em;
+    margin-left: 8em;
+
+}
+.paginator .next{
+    margin-left: .5em;
+}

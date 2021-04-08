@@ -1,0 +1,95 @@
+{% load static %}
+{% load  filter_status %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/nav.js' %}"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'reset.css' %}">
+    <link rel="stylesheet" href="{% static 'cabinet.css' %}">
+
+    <title>Личный кабинет</title>
+</head>
+<body>
+    <header class="header">
+        <a href="{% url 'index' %}" class="logo-href"><div class="logo">СЛЕДОК <span class="first">T</span><span class="second">V</span> </div></a>
+        <div class="float-right">
+            
+            <a href="{% url 'logout' %}">Выход</a>
+            <a href="{% url 'users:trash' pk=user.pk %}"><i class="fa fa-trash fa-2x" aria-hidden="true" id="trash"></i></a>
+            <i class="fa fa-check add_clear fa-2x" aria-hidden="true" style="color: red"></i>
+
+
+        </div>
+    </header>
+    <div id="description"><p>Моя корзина</p></div>
+
+    <div class="main">
+        <div class="first">
+        <div class="username">
+            <h3>{{ user.username }}</h3>
+        </div>
+
+
+
+        {% if  user.siteusermodel.send %}
+
+
+        {% else %}
+        <div class="alerts">
+            <p>Настройка оповещений</p>
+            
+            <div class="alert-form">
+                <form action='' method="POST">
+                    <input type="radio" name="send" id="radio-form" value="telegram" checked>
+                    <label for="male">Telgram</label><br>
+                    <input type="radio" name="send" id="radio2-form" value="email">
+                    <label for="male">Email</label><br>
+                    <p class="chois">Выбериите как хотите получать уведомления</p>
+                    <input type="checkbox" checked name="time_1" id="" class="time">
+                    <label for="time" class="label-time">В день получения информации о выходе новой серии </label><br>
+                    {% csrf_token %}
+                    <input type="checkbox" checked name="time_2" id="" class="time" >
+                    <label for="time"  class="label-time">Напоминание в день выхода новой серии</label><br>
+                    <button type="submit" class="send">Отправить</button>
+                    
+
+                </form>
+            </div>
+           
+
+           
+        </div>
+        {% endif %}
+        </div>
+        
+    <div class="collection" >
+        <h3 class="my-text">Моя коллекция</h3>
+        <div class="my_shows">
+        {% if shows_user %}
+        {% for show in shows_user %}
+        <div class="show">
+         <div class="warnings">{{ show.pk }}</div>
+            <img src="{{show.original_image.url}}" alt="" id="img">
+            <div class="description">
+                <a href="{{ show.get_absolute_url }}">{{ show.rus_fields.name |striptags }}</a>
+                <div class="info-eyes">{{ show.status|status }}</div>
+                <i class="fas fa-eye eyes"></i>
+                <i class="fas fa-trash-alt clear"></i>
+                
+
+            </div>
+        </div>
+        
+        {% endfor %}
+        {% endif%}
+        </div>
+
+    </div>
+    </div>
+
+</body>
+</html>

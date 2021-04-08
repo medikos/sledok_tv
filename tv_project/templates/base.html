@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="{% static 'js/nav.js' %}"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="http://ваш_сайт/css/font-awesome.min.css"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'reset.css' %}">
+  <link rel="stylesheet" href="{% static 'nav.css' %}">
+  {% block link %}
+
+
+  {% endblock link %}
+  <!-- <link rel="stylesheet" href="{% static 'main.css' %}"> -->
+
+  <title>{% block title %}Hello{% endblock title %}</title>
+</head>
+<body>
+      <header class="mg-header">
+        <div class="head-1">
+          <a href="{% url 'index' %}" class="logo-href"><div class="logo">СЛЕДОК <span class="first">T</span><span class="second">V</span> </div></a>
+          <form action="" method="get" class="search">
+            <input  placeholder="Сериал    Аниме " type="search" id='search' class="jsInput">
+            <button type="submit" class="jsButton" id="ButtonSearch"><i class="fas fa-search fa-3x" id="icon"></i></button>
+            <div class="compilation">
+                
+
+            </div>
+
+          </form>
+          
+
+          <div>
+            {% if user.is_authenticated %}
+                 <p class="username"> {{ user.username }} <a href="{% url 'users:account' pk=user.pk %}"><i class="fa fa-user-circle" aria-hidden="true"></i></a></p>
+                 
+
+            {% else %}
+
+            <a href="{% url 'login' %}" class="log auth">Вход</a>
+            <a href="{% url 'registration' %}" class="reg auth ">Регистрация</a>
+
+            {% endif %}
+          </div>
+          
+
+        </div>
+        <nav>
+          <ul class="nav">
+            <li><a href="#" class="one">О сайте</a></li>
+            <li><a href="{% url 'anime' %}" class="two">Аниме</a></li>
+            <li><a href="{% url 'shows' %}" class="three">Сериалы</a></li>
+            <li><a href="{% url 'cartoons' %}" class="five">Мультфильмы</a></li>
+
+            {% comment %} <li><a href="#" class="four">Календарь</a></li> {% endcomment %}  
+            
+          </ul>
+        </nav>
+          
+      </header>
+      {% block content %}
+
+      <div class="main">
+        <div class="board-right">   
+          <h1>Самое Популярное</h1>
+          <div class="tv-shows">
+            
+            <div class="show">
+              <a href="#">
+                <img src="https://static.tvmaze.com/uploads/images/medium_portrait/276/690357.jpg" class="original-image">
+              </a>
+              <div class="show-description">
+                <a href="#">The Outpost</a>
+              </div>
+              <div class="like-raiting"> 
+                <a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
+              </div>
+              <a href="#"><div class="show-raiting" id='show-raiting'>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                75
+              </div></a>
+
+            </div>
+            
+            
+
+
+
+          </div>
+        </div>
+        <div class="board-left">
+          <h1>Ближайшие даты</h1>
+          <div class="mini-shedule"> 
+
+          </div>
+          
+        </div>
+        
+
+
+      </div>
+      {% endblock content %}
+</body>
+</html>

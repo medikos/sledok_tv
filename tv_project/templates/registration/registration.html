@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'reset.css' %}">
+    <link rel="stylesheet" href="{% static 'registration.css' %}">
+    <title>Title</title>
+</head>
+<body>
+
+    <header>
+        <a href="{% url 'index' %}" class="logo-href"><div class="logo">СЛЕДОК
+            <span class="first">T</span><span class="second">V</span> </div></a>
+    </header>
+    <h2>Регистрация</h2>
+    <form method="post" class='registration'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+
+    </form>
+
+</body>
+</html>

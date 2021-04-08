@@ -1,0 +1,92 @@
+body{
+    background-image: url('img/black-gridius.png');
+    /* text-align: center; */
+}
+header{
+    text-align: center;
+    margin-top: 2em;
+    font-family: 'Bebas Neue', cursive;
+    
+}
+.logo .first{
+    color: yellow;
+}
+.logo .second {
+    color: red;
+}
+header a{
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 2rem;
+}
+.center{
+    margin-top: 10em;
+    border: 1px solid whitesmoke;
+    width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: yellow;
+    border-radius: 1em;
+    padding:1em;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 15em;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.center h2{
+    font-size: 1.5em;
+    
+}
+
+#login-form p{
+    margin-top: 2em;
+
+}
+#login-form .input{
+    border-radius: 1em;
+    width: 90%;
+    height: 2.3em;
+    padding-left: 1em;
+    outline: none;
+
+}
+#login-form label{
+    display: none;
+}
+#login-form .button{
+    margin-top: 1em;
+    width: 50%;
+    background-color: red;
+    border-radius: .5em;
+    color:whitesmoke;
+    cursor: pointer;
+    font-size: 1.3em;
+    padding: 0;
+    height: 1.7em;
+}
+
+.or{
+    margin-top: 1.3em;
+    width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+    
+
+}
+.or h1{
+    font-size: 1.4em;
+}
+
+.or p{
+    margin-top: .5em;
+    font-size: 1.3em;
+    color: wheat;
+
+    
+}
+.or a{
+    text-decoration: none;
+}
