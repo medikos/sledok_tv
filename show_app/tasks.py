@@ -2,7 +2,7 @@ from tv_project import celery_app
 from django.core.mail import send_mail
 from celery import shared_task
 from django.contrib.auth.models import User
-from show_app.alerts.messages import instructions_email as email_inst, instructions_telegram as telegram_inst
+from show_app.alerts.messages_1 import instructions_email as email_inst, instructions_telegram as telegram_inst
 
 
 @celery_app.task
@@ -12,7 +12,7 @@ def send_instructions(username: str, code: str, email: str, sender: str):
     subject = 'Инструкция'
     message = email_inst
     if sender == 'telegram':
-        message = telegram_inst.format(code, username)
+        message = telegram_inst.format(name= username, code=code)
     from_ = 'medik@sledoktv.ru'
     list_email = list()
     list_email.append(email)
