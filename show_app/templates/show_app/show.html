@@ -31,7 +31,7 @@
         </div>
         <div class="description">
             {% if show.rus_fields.description %}
-            <p>{{ show.rus_fields.description }} hello</p>
+            <p>{{ show.rus_fields.description }}</p>
             
             {% else %}
             <p> {{ show.summary|striptags}}</p>
@@ -42,7 +42,7 @@
             <i class="fa fa-star star-right" aria-hidden="true"></i>
             {% endif %}  
             <div class="like-raiting"> 
-                <a href="#" id="Subscribe"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></a>
+                <a href="#" id="Subscribe">Добавить в коллекцию</a>
                 <div id='add'>Добавить в коллекцию</div>
                 <div id='notAuth'>Вам нужно войти в личный кабинет для добавления шоу в коллекцию</div>
                 <div id='yesAuth'>Добавлено шоу  коллекцию</div>
