@@ -3,3 +3,4 @@ media/
 *.pyc
 venv/
 show_app/manage_db/json_files_update/
+celerybeat*
