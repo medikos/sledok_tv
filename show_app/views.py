@@ -9,7 +9,7 @@ from django.views.decorators.http import require_http_methods
 
 # from show_app.forms import FormUser
 
-from show_app.models import Show, Episode, Telegram, SiteUserModel
+from show_app.models import Show, Episode, Telegram, SiteUserModel,RusFields
 from django.core.mail import send_mail
 from show_app.forms import RegisterUserForm, LoginForm
 from django.contrib.auth.models import User
@@ -90,9 +90,11 @@ def index(request):
     # usr = request.META['HTTP_X_REAL_IP']
     base = False
     episodes = cache.get('episodes')
-    if not episodes:
+
+    if not episodes or cache.get('rus_objects') is None:
         cache.set('episodes', Episode.objects.filter_episodes(), timeout=20000)
         episodes = cache.get('episodes')
+        cache.set('rus_objects', RusFields.objects.search_rus_names())
 
     if request.path == '/anime/':
         context = Show.objects.shows_for_display(type_show='anime')

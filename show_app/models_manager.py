@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.db.models import Q
+from django.core.cache import cache
 
 
 class ShowManager(models.Manager):
@@ -21,7 +22,8 @@ class ShowManager(models.Manager):
 
         elif type_show == 'cartoons':
             shows = shows.filter(type_show='Animation').exclude(genres=14)
-        return shows.order_by('-created')
+        rus_objects = cache.get('rus_objects')
+        return shows.filter(rus_fields__in=cache.get('rus_objects'))
 
     def search_form(self, value):
         Q1 = Q(name__icontains=value)
@@ -33,12 +35,8 @@ class ShowManager(models.Manager):
 
         for data in shows:
             try:
-                if data.rus_fields is None:
-                    rus_name = ''
-                else:
-                    rus_name = data.rus_fields.name
-                
-                dict_shows.append([data.name, rus_name, data.premired, data.image_original_url,
+
+                dict_shows.append([data.name, data.rus_fields.name, data.premired, data.image_original_url,
                                    data.get_absolute_url()])
 
             except ValueError:
@@ -66,6 +64,9 @@ class RusFeldsManager(models.Manager):
                 continue
         print(dict_shows)
         return dict_shows
+
+    def search_rus_names(self):
+        return self.filter(name__regex='[а-яА-Я]')
 
 
 class EpisodeManager(models.Manager):
