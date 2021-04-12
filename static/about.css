@@ -1,0 +1,66 @@
+main{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.content{
+    margin-top: 3em;
+    margin-bottom: 3em;
+    color: rgba(199, 224, 21, 0.94);
+    font-size: 1.4em;
+    line-height: 33px;
+    letter-spacing: 0.109em;
+    font-weight: 400;
+    font-style: italic;
+
+}
+.content span {
+    font-weight: bold;
+    text-decoration: underline red;
+}
+.about{
+    font-size: 1.2em;
+    color: rgba(245, 245, 245, 0.788);
+    line-height: 33px;
+    letter-spacing: .1em;
+}
+.instruction .name{
+
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5em;
+    text-decoration: underline red;
+    color: rgba(245, 245, 245, 0.849);
+    width: 100%;
+    text-align: center;
+}
+.rule {
+    font-size: large;
+    margin-top: 2em;
+    margin-left: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(245, 245, 245, 0.767);
+    margin-bottom: 3em;
+    
+    
+}
+.rule p{
+    margin-left: 1em;
+    margin-top: 1em;
+}
+.flex {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+img {
+    width: 370px;
+    height: 300px;
+    margin-left: 2em;
+    margin-top: 3em;
+}

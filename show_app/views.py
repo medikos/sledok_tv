@@ -85,6 +85,9 @@ def detail_show(request, pk):
 
     return render(request, 'show_app/show.html', {'show': show})
 
+def about_view(request):
+    return render(request, 'show_app/about.html' )
+
 
 def index(request):
     # usr = request.META['HTTP_X_REAL_IP']
