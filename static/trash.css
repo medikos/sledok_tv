@@ -67,3 +67,19 @@ header .header{
     font-family: 'Bebas Neue', cursive;
     color: whitesmoke;
 }
+/* ---------------------------------------------------------------------------------------- */
+@media (max-width:900px){
+    .header .my-trash{
+        font-size: .7em;
+    }
+    .header .clear-trash{
+        font-size: .5em;
+    }
+    .all-shows .show img{
+        width: 60%;
+        height: 150px;
+    }
+    .all-shows .description{
+        width: 60%;
+    }
+}

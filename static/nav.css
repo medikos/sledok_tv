@@ -3,6 +3,9 @@
 :root {
     font-size: 16px;
 }
+.header{
+    display: none;
+}
 
 *{
     box-sizing: border-box;
@@ -25,6 +28,7 @@ body{
     color: whitesmoke;
     
 }
+
 .head-1{
     background-color: rgba(0, 0, 0, 0.3);
     display: flex;
@@ -342,6 +346,140 @@ nav{
 
 
 /* style for main */
+@media (max-width:900px){
+    .board-left{
+        display: none;
+    }
+    .header{
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .mg-header{
+        display: none;
+    }
+    .main .left{
+        font-size: 1em;
+    }
+    .phone-header{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        font-family: 'Bebas Neue', cursive;
+        font-size: 2em;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-bottom: solid black 1px;
+        color: white;
+        padding: 1em;
+
+
+    }
+    .phone-header i{
+        cursor: pointer;
+        box-shadow: 2px 5px 5px white;
+    }
+    .search-phone{
+        text-align: center;
+        position: relative;
+    }
+    .search-phone input{
+        background-color: darkslategray;
+        height: 2.5em;
+        padding-left: 2em;
+        
+        border-right: none;
+        margin-top: -12px;
+        margin-right: -4px;
+        border-top: red solid 2px;
+        border-bottom: yellow solid 2px;
+        border-left: blue solid 2px;
+        border-top-left-radius: 1em;
+        border-bottom-left-radius: 1em;
+        outline: none;
+        color: white;
+        font-family:'Bebas Neue', cursive;
+        width: 60%;
+        height: 2.51em;
+
+    
+    }
+    .search-phone button{
+        background-color: darkslategray;
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+        border-left: none;
+        height: 2.5em;
+        border-top: red solid 2px;
+        border-right: green solid 2px;
+        border-bottom: yellow solid 2px;
+        color:  whitesmoke;
+        width: 20%;
+    }
+    .search-phone .compilation-2{
+            z-index: 100;
+            top: 48px;
+            
+            width: 80%;
+            position: absolute;
+            
+        
+        
+    }
+    .search-phone .a{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #menu-phone{
+        text-align: center;
+        display: flex;
+        flex-flow: column nowrap;
+        
+        font-family: 'Bebas Neue', cursive;
+    }
+    #menu-phone a{
+        color: black;
+        text-decoration: none;
+        border: solid 1px whitesmoke;
+        padding: .6em;
+        font-size: 1.1em;
+        border-radius: 1em;
+        
+    }
+    #menu-phone .one-phone{
+        background-color: green;
+    }
+
+    #menu-phone .two-phone{
+        background-color: red;
+    }
+    #menu-phone .three-phone{
+        background-color: yellow;
+    }
+    #menu-phone .four-phone{
+        background-color: violet;
+    }
+    #menu-phone .six-phone{
+        background-color: blue;
+
+    }
+    #menu-phone .seven-phone{
+        background-color: indianred;
+    }
+    #menu-phone .eith-phone{
+        background-color: orangered;
+    }
+    .logo {
+        text-decoration: none;
+        color: whitesmoke;
+    }
+
+
+    
+
+    
+    
+
+}
 .main{
     margin-top: 2em;
     max-width: 90%;

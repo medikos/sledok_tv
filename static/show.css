@@ -1,6 +1,26 @@
 :root{
     font-family: 'Bebas Neue', cursive;
 }
+
+
+
+@media (max-width:900px){
+        .show{
+            width: 100%;
+            padding-top: 3em;
+
+        }
+        .img{
+            flex-basis: 70px;
+            height: 50px;
+        }
+        
+
+
+
+
+
+}
 .show{
     width: 80%;
     margin-left: auto;
@@ -72,7 +92,7 @@
      border: solid 1px whitesmoke;
      padding: .5em;
      border-radius: 1em;
-     background-color: rgb(247,255,0);
+     background-color: rgba(245, 245, 245, 0.747);
      color: black;
 
  }
@@ -204,3 +224,80 @@
      color: #d91010;
 
  }
+ /* -------------------------------------------- */
+ @media (max-width:900px){
+    .show{
+        width: 100%;
+        padding-top: 3em;
+        
+    }
+    .show .show-name{
+        font-size: 1em;
+    }
+    .description{
+        font-size: .8em;
+        flex:none;
+        margin-bottom: 3em;
+    }
+    .description .like-raiting{
+        position: unset;
+        margin-top: 2em;
+    }
+    .description i{
+        display: initial;
+        margin-right: 1em;
+    }
+    #add{
+           position:initial;
+           width: 30%;
+           margin-top: 1em;
+
+    }
+    #notAuth{
+        position: initial;
+        margin-top: 1em;
+        width: 70%;
+    }
+    #yesAuth{
+        position: initial;
+        margin-top:1em;
+        width: 70%;
+    }
+
+    .show-status{
+        width: 200px;
+        font-size: .7em;
+        text-align: center;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;        
+    }
+    .img{
+        flex-basis: 100%;
+        height: 300px;
+        text-align: center;
+        
+    }
+    .img img{
+        width: 171px;
+        height: 200px;
+    }
+    .show-image-and-description{
+        flex-flow: column;
+    }
+    .show .show-name {
+        text-align: center;
+        font-size: 1em;
+        color: rgb(243, 243, 243);
+        letter-spacing: .3em;
+        text-decoration: underline rgba(245, 245, 245, 0.473);
+        padding-bottom: 2em;
+    }
+    .search-phone input{
+        margin-top: -9px;
+    }
+
+    .head-episodes div{
+        font-size: .6em;
+    }
+}

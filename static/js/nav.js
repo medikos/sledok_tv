@@ -4,6 +4,7 @@ $(document).ready(function () {
     $('#yesAuth').hide()
     $('.add_clear').hide()
     $('#description').hide()
+    $('#menu-phone').hide()
 
     $('.info-eyes').hide()
 
@@ -158,6 +159,10 @@ $(document).ready(function () {
 
     }
 
+
+
+   
+
     var keyupCount = 0;
     $('#search').keyup(function () {
         $this = $(this)
@@ -170,5 +175,63 @@ $(document).ready(function () {
 
     });// end blur
 
+
+    // -------------------------------------------------------------------------------------------------------- //
+
+
+
+
+    function checkValPhone($this) {
+        let val = $this.val()
+        if (val.length > 1) {
+            $.getJSON("search/", {'value': val},
+                function (data, textStatus, jqXHR) {
+                    if (data.length == 0) {
+                        $('.complication-2').remove();
+
+                    }
+                    let html = '';
+                    for (let i = 0; i < data.length; i++) {
+                        let new_html = `<a href="${data[i][4]}" class='url-search-show'><div class="search-show">
+                        <img src="${data[i][3]}">
+                        <div class="name-rus-en">
+                          <p class="date">${data[i][2]}</p>
+                          <p class="ru">${data[i][1]}</p>
+                          <p class="en">${data[i][0]}</p>
+                        </div>
+                      </div></a>`;
+                        html += new_html
+
+                    }
+                    $('.compilation-2').html(html);
+
+
+                }
+            );
+        } else {
+            $('.complication-2').remove()
+
+        }
+
+
+    }
+
+    var keyupCount = 0;
+    $('#search-phone').keyup(function () {
+        $this = $(this)
+        let time = setTimeout(checkValPhone, 0, $this);
+
+
+    });// end focus
+    $('#search-phone').blur(function () {
+        $('.complication-2').remove();
+
+    });// end blur
+
+    
+    $('#menu-bars').click(function(){
+        $('#menu-phone').fadeToggle(500)
+
+    }); //end click
 
 }); // end ready

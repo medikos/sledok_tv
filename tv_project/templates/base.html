@@ -53,7 +53,7 @@
         </div>
         <nav>
           <ul class="nav">
-		  <li><a href="{% url 'about' %}" class="one">О сайте</a></li>
+            <li><a href="{% url 'about' %}" class="one">О сайте</a></li>
             <li><a href="{% url 'anime' %}" class="two">Аниме</a></li>
             <li><a href="{% url 'shows' %}" class="three">Сериалы</a></li>
             <li><a href="{% url 'cartoons' %}" class="five">Мультфильмы</a></li>
@@ -64,6 +64,47 @@
         </nav>
           
       </header>
+      <div class='header'>
+      <div class='phone-header'>
+            <div class='logo' >
+              <a href='{% url "index" %}'><div class="logo">СЛЕДОК <span class="first">T</span><span class="second">V</span> </div></a>
+
+            </div>
+            <i class="fa fa-bars fa-1x" aria-hidden="true" id='menu-bars'></i>
+
+      </div>
+      <div id='menu-phone'>
+            <a href="{% url 'about' %}" class='one-phone' >О сайте</a>
+            <a href="{% url 'anime' %}" class='two-phone' >Аниме</a>
+            <a href="{% url 'shows' %}" class='three-phone' >Сериалы</a>
+            <a href="{% url 'cartoons' %}" class='four-phone' >Мультфильмы</a>
+            {% if user.is_authenticated %}
+                 <a href="{% url 'users:account' pk=user.pk %}" class='eith-phone'>{{user.username}} / Личный кабинет</i></a>
+                 
+
+            {% else %}
+            <a href="{% url 'login' %}" class="six-phone">Вход</a>
+            <a href="{% url 'registration' %}" class="seven-phone">Регистрация</a>
+            {% endif %}
+
+
+            
+          
+
+
+
+      </div>
+      <div class='search-phone'>
+        <div class='a'>
+          <input type='search-2' placeholder="Сериал    Аниме " id='search-phone'>
+          <button><i class="fas fa-search fa-2x"></i></button>
+            <div class='compilation-2'>
+                    
+            </div>
+            </div>
+        </div>
+      </div>
+      
       {% block content %}
 
       <div class="main">
