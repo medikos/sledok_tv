@@ -404,13 +404,15 @@ nav{
     }
     .search-phone button{
         background-color: darkslategray;
-        border-top-right-radius: 1em;
-        border-bottom-right-radius: 1em;
-        border-left: none;
+        
+        
+	border:none;
+	outline:none;
+        
         height: 2.5em;
-        border-top: red solid 2px;
-        border-right: green solid 2px;
-        border-bottom: yellow solid 2px;
+        
+        
+        
         color:  whitesmoke;
         width: 20%;
     }

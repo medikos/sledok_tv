@@ -231,6 +231,10 @@
         padding-top: 3em;
         
     }
+    .show-episodes .episode{
+	    font-size:.7em;
+	    padding:.8em .2em .8em .7em;
+    }
     .show .show-name{
         font-size: 1em;
     }
