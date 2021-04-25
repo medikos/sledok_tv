@@ -396,7 +396,7 @@ nav{
         border-bottom-left-radius: 1em;
         outline: none;
         color: white;
-        font-family:'Bebas Neue', cursive;
+        font-family:'Bebas Neue', sans-serif;
         width: 60%;
         height: 2.51em;
 
@@ -436,7 +436,7 @@ nav{
         display: flex;
         flex-flow: column nowrap;
         
-        font-family: 'Bebas Neue', cursive;
+        font-family: 'Bebas Neue', sans-serif;
     }
     #menu-phone a{
         color: black;
@@ -461,7 +461,7 @@ nav{
         background-color: violet;
     }
     #menu-phone .six-phone{
-        background-color: blue;
+        background-color: #e2e2e291;
 
     }
     #menu-phone .seven-phone{
@@ -488,7 +488,7 @@ nav{
     margin-left: auto;
     margin-right: auto;
     /* border: 1px solid whitesmoke; */
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', sans-serif;
     display: flex;
     flex-flow: row wrap;
 }
