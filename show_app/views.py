@@ -79,14 +79,24 @@ class MyAppLoginView(LoginView):
 
 
 def detail_show(request, pk):
+    types = {'Scripted':'сериала', 'Animation':'мультфильма'}
     show = Show.objects.get(pk=pk)
     if show.original_image.name == '':
         return HttpResponseNotFound('<h1>Такой страницы нет ошибка 404</h1>')
 
-    return render(request, 'show_app/show.html', {'show': show})
+    if show.genres.all().filter(pk=14):
+        type_ = 'аниме'
+    else:
+        type_ = types[show.type_show]
+    description_words = 'Смотрите дату выхода серий, описание, оценку сериала. База из более чем 27000 сериалов, аниме и мульфильмов. Возможность настроить оповещение выхода сериала  через почту или телеграмм.'
+
+
+    return render(request, 'show_app/show.html', {'show': show, 'type':type_, 'description_words':description_words})
 
 def about_view(request):
-    return render(request, 'show_app/about.html' )
+    description_words = 'СЛЕДОК TV - это сайт созданный для того чтобы вы никогда не пропустили и всегда были в курсе о выходе сезонов и серий ваших любимых сериалов. Более 27000 сериалов.'
+    title_words = 'Следок TV | О сайте и инструкция.'
+    return render(request, 'show_app/about.html', {'title_words': title_words, 'description_words':description_words} )
 
 
 def index(request):
@@ -101,22 +111,35 @@ def index(request):
 
     if request.path == '/anime/':
         context = Show.objects.shows_for_display(type_show='anime')
+        
+        title_words = 'Дата выхода новых серий аниме (2021) | Следок TV'
+        description_words = 'Дата выхода новых сезонов и серий аниме. Напоминание о выходе новых серий и сезонов аниме через почту и телеграм. Более 10000 аниме на любой вкус'
 
 
     elif request.path == '/shows/':
         context = Show.objects.shows_for_display(type_show='shows')
+        
+        title_words = 'Дата выхода новых сериалов (2021) | Следок TV'
+        description_words = 'Точная дата выхода новых серий сериала. База из более чем 27000 сериалов на любой выбор. Возможность подключить оповещение сериалов через почту или телеграмм.'
 
     elif request.path == '/cartoons/':
         context = Show.objects.shows_for_display(type_show='cartoons')
+
+        
+        title_words = 'Дата выхода новых сезонов и серий мультсериалов | Следок TV'
+        description_words = 'График выхода новых сезонов и серий мультисериелов. Все популярные сериала с точной датой выхода. Настроить оповещение через почту или телеграмм, чтобы не пропустить свои любимые мультисериалы. '
 
 
     else:
         logging.info('hello')
         context = Show.objects.shows_for_display()
         base = True
+        title_words = 'Дата выхода новых сериалов (2021) | Следок TV'
+        description_words = 'Точная дата выхода новых серий сериала. База из более чем 27000 сериалов на любой выбор. Возможность подключить оповещение сериалов через почту или телеграмм.'
 
     logging.info(request.user.pk)
     paginator = Paginator(context, 18)
     page = paginator.get_page(request.GET.get('page', None))
 
-    return render(request, 'show_app/main.html', {'shows': context, 'page': page, 'episodes': episodes, 'base': base})
+    return render(request, 'show_app/main.html', {'shows': context, 'page': page, 'episodes': episodes,
+     'base': base, 'title_words':title_words, 'description_words':description_words})
