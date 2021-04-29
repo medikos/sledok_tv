@@ -12,7 +12,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from pathlib import Path
-
+import environ
+env = environ.Env(
+        DEBUG=(bool, False)
+        )
+environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '08+&hu#@1_vze2d^q!sxv6!q*48*$v+l1t30k82_m5w_@&lp68'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = env('DEBUG')
 
 
 
@@ -82,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'sledoktv_bd',
         'USER': 'sledoktv_user',
-        'PASSWORD': 'KJJfPXuqprK19M0',
+        'PASSWORD': env('DATABASE_PASS'),
         'HOST': 'localhost',
         'PORT': '5432'
     }
@@ -150,7 +154,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'medik@sledoktv.ru'
-EMAIL_HOST_PASSWORD = 'nuttertools'
+EMAIL_HOST_PASSWORD = env('EMAIL_PASS')
 MAIL_FROM = 'medik@sledoktv.ru'
 
 
