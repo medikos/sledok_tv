@@ -6,6 +6,7 @@ from show_app.alerts.messages_1 import alert_release_date
 from tv_project.settings import EMAIL_HOST_USER
 import requests
 from django.core.mail import send_mail
+from show_app.telegram_app import TOKEN
 
 
 class SendAlerts:
@@ -61,8 +62,7 @@ class SendAlerts:
         return res
 
     def send_telegram(self, alert: namedtuple):
-        # my_chat_id = 1651198085
-        TOKEN = '1685201828:AAEEpPTyerjCY4VUGkPnwycFnE3rNeBtMY4'
+       
         url = 'https://api.telegram.org/bot{}/sendMessage?'
         payload = {'chat_id': alert.telegram, 'text': alert.message}
         print(url, payload)
