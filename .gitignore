@@ -6,3 +6,4 @@ show_app/manage_db/json_files_update/
 celerybeat*
 *.log
 *.swp
+.env
