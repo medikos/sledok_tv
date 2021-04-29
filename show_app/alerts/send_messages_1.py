@@ -55,16 +55,17 @@ class SendAlerts:
         list_messages = self.create_messages()
         for alert in list_messages:
             if alert.telegram:
-                self.send_telegram(alert)
+                res = self.send_telegram(alert)
             else:
-                self.send_email(alert)
-        return
+                res = self.send_email(alert)
+        return res
 
     def send_telegram(self, alert: namedtuple):
         # my_chat_id = 1651198085
         TOKEN = '1685201828:AAEEpPTyerjCY4VUGkPnwycFnE3rNeBtMY4'
         url = 'https://api.telegram.org/bot{}/sendMessage?'
         payload = {'chat_id': alert.telegram, 'text': alert.message}
+        print(url, payload)
         res = requests.get(url.format(TOKEN), params=payload)
         return res.status_code
 
