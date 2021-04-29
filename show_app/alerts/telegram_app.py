@@ -1,6 +1,8 @@
 import telebot
+import environ
+env = environ.Env()
 
-TOKEN = '1685201828:AAEEpPTyerjCY4VUGkPnwycFnE3rNeBtMY4'
+TOKEN = env('TOKEN')
 URL = 'https://sledoktv.ru/telegram/'
 bot = telebot.TeleBot(TOKEN, parse_mode=None)
 TEST = False
