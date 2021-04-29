@@ -9,6 +9,8 @@ from show_app.manage_db.get_fields import GetShowFields, GetEpisodesFields
 from show_app.models import Show
 from tv_project import settings
 import re
+import environ
+env = environ.Env()
 
 
 class BaseRequests:
@@ -37,9 +39,8 @@ class BaseRequests:
 
 class RusFieldsParse:
     def __init__(self, type_bd: str, id_bd: int):
-        self.key = '33af7dc91957adb4b757d8ce173637df'
-        self.url = 'https://api.themoviedb.org/3/find/{}?api_key=' \
-                   '33af7dc91957adb4b757d8ce173637df&language=ru&external_source={}'.format(id_bd, type_bd)
+        self.key = env('KEY_TOKEN')
+        self.url = env('URL_PARSE')
         self.requests = BaseRequests()
 
     def _get_rus_fields(self, data: dict) -> dict:
@@ -80,7 +81,7 @@ class TvMazeParse(BaseRequests):
         экземпляр обьекта GetShowFields для получения отдельных значений полей
         """
         self.pk = pk
-        self._url_show_main = 'http://api.tvmaze.com/shows/{}'.format(pk)
+        self._url_show_main = 'http://{}/shows/{}'.format(env('SITE_PARSE'),pk)
         self._get_show_fields = GetShowFields()
         self._get_episodes_fields = GetEpisodesFields()
         self._url_show_episodes_list = 'http://api.tvmaze.com/shows/{}/episodes'.format(pk)
