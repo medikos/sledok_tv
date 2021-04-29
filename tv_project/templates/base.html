@@ -2,26 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-      ym(76681352, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true
-      });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/76681352" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-	
+  <title>{% block title %}Hello{% endblock title %}</title>
+  <meta name='description' content="{{ description_words }}" >
   <link rel='icon' href='https://sledoktv.ru/media/photo_2021-04-26_18-20-06.jpg' type='image/jpeg'>
 ` <meta name="yandex-verification" content="a434d47d5858a9f2"/>
   <meta charset="UTF-8">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="{% static 'js/nav.js' %}"></script>
@@ -37,10 +23,23 @@
   {% endblock link %}
   <!-- <link rel="stylesheet" href="{% static 'main.css' %}"> -->
 
-  <title>{% block title %}Hello{% endblock title %}</title>
-  <meta name='description' content="{{ description_words }}" >
+  
 </head>
 <body>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(76681352, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+      });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/76681352" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
       <header class="mg-header">
         <div class="head-1">
           <a href="{% url 'index' %}" class="logo-href"><div class="logo">СЛЕДОК <span class="first">T</span><span class="second">V</span> </div></a>

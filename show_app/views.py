@@ -18,6 +18,8 @@ from django.contrib.auth.models import User
 
 # add filemode="w" to overwrite
 logging.basicConfig(filename="sample.log", level=logging.INFO)
+def sitemap(request):
+    return render(request, 'show_app/sitemap.xml')
 
 
 def create_user(user: User, password: str):
@@ -88,14 +90,14 @@ def detail_show(request, pk):
         type_ = 'аниме'
     else:
         type_ = types[show.type_show]
-    description_words = 'Смотрите дату выхода серий, описание, оценку сериала. База из более чем 27000 сериалов, аниме и мульфильмов. Возможность настроить оповещение выхода сериала  через почту или телеграмм.'
+    description_words = 'Смотрите дату выхода серий, описание, оценку {} (2021). Более чем 27000 сериалов. Возможность настроить оповещение выхода сериала через почту или телеграмм.'.format(type_)
 
 
     return render(request, 'show_app/show.html', {'show': show, 'type':type_, 'description_words':description_words})
 
 def about_view(request):
-    description_words = 'СЛЕДОК TV - это сайт созданный для того чтобы вы никогда не пропустили и всегда были в курсе о выходе сезонов и серий ваших любимых сериалов. Более 27000 сериалов.'
-    title_words = 'Следок TV | О сайте и инструкция.'
+    description_words = 'СЛЕДОК TV - это сайт созданный для того чтобы вы никогда не пропустили и всегда были в курсе о выходе сезонов и серий ваших любимых сериалов. Более 27000 сериалов. '
+    title_words = 'О Сайте и Инструкция | СЛЕДОК TV (2021)'
     return render(request, 'show_app/about.html', {'title_words': title_words, 'description_words':description_words} )
 
 
@@ -113,29 +115,30 @@ def index(request):
         context = Show.objects.shows_for_display(type_show='anime')
         
         title_words = 'Дата выхода новых серий аниме (2021) | Следок TV'
-        description_words = 'Дата выхода новых сезонов и серий аниме. Напоминание о выходе новых серий и сезонов аниме через почту и телеграм. Более 10000 аниме на любой вкус'
+        description_words = 'Дата выхода новых сезонов и серий аниме. Более 10000 аниме. Напоминание о выходе новых серий и сезонов аниме через почту и телеграм.'
 
 
     elif request.path == '/shows/':
         context = Show.objects.shows_for_display(type_show='shows')
         
-        title_words = 'Дата выхода новых сериалов (2021) | Следок TV'
-        description_words = 'Точная дата выхода новых серий сериала. База из более чем 27000 сериалов на любой выбор. Возможность подключить оповещение сериалов через почту или телеграмм.'
+        title_words = 'Дата выхода сериалов (2021) | Следок TV'
+        description_words = 'Дата выхода новых сериалов. График выхода серий. Более 15000 сериалов.Настройте оповещение дата выхода сериалов, через почту или телеграмм.'
+                                                                                                
 
     elif request.path == '/cartoons/':
         context = Show.objects.shows_for_display(type_show='cartoons')
 
         
-        title_words = 'Дата выхода новых сезонов и серий мультсериалов | Следок TV'
-        description_words = 'График выхода новых сезонов и серий мультисериелов. Все популярные сериала с точной датой выхода. Настроить оповещение через почту или телеграмм, чтобы не пропустить свои любимые мультисериалы. '
+        title_words = 'Дата выхода мультсериалов(2021) | Следок TV'
+        description_words = 'График выхода новых сезонов и серий мультисериелов. Более 10000 мультисериалов. Настроить оповещение через почту или телеграмм, чтобы не пропустить свои любимые мультисериалы. '
 
 
     else:
         logging.info('hello')
         context = Show.objects.shows_for_display()
         base = True
-        title_words = 'Дата выхода новых сериалов (2021) | Следок TV'
-        description_words = 'Точная дата выхода новых серий сериала. База из более чем 27000 сериалов на любой выбор. Возможность подключить оповещение сериалов через почту или телеграмм.'
+        title_words = 'Дата выхода сериалы, аниме (2021) | СЛЕДОК TV'
+        description_words = 'Дата выхода сериалы, аниме (2021). Более 15000 сериалов,12000 аниме. Возможность настроить оповещение о дате выхода сериала , аниме, через почту или телеграмм.'
 
     logging.info(request.user.pk)
     paginator = Paginator(context, 18)
